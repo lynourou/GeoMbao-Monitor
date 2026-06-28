@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>GeoMbao Monitor</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet -->
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', path='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- ========================================================= -->
+
+<header class="topbar">
+
+    <div class="logo">
+
+        🌳 <strong>GeoMbao Monitor</strong>
+
+    </div>
+
+    <div class="title">
+
+        Plateforme SIG de Gestion de la Forêt Classée de Mbao
+
+    </div>
+
+    <div class="user">
+
+        🔍 Recherche
+
+        &nbsp;&nbsp;
+
+        👤 Admin
+
+    </div>
+
+</header>
+
+<!-- ========================================================= -->
+
+<nav class="menu">
+
+    <a href="#">Accueil</a>
+
+    <a href="#" class="active">Carte SIG</a>
+
+    <a href="#">Dashboard</a>
+
+    <a href="#">Analyses</a>
+
+    <a href="#">Téléchargements</a>
+
+    <a href="#">Administration</a>
+
+    <a href="#">À propos</a>
+
+</nav>
+
+<!-- ========================================================= -->
+
+<div class="container">
+
+    <!-- PANEL -->
+
+    <aside class="sidebar">
+
+        <h2>Couches</h2>
+
+        <details open>
+
+            <summary>Référence</summary>
+
+            <label><input type="checkbox" checked id="foret"> Forêt classée</label>
+
+            <label><input type="checkbox"> Commune</label>
+
+            <label><input type="checkbox"> Réseau routier</label>
+
+            <label><input type="checkbox"> Plans d'eau</label>
+
+            <label><input type="checkbox"> Observations</label>
+
+        </details>
+
+        <details>
+
+            <summary>Occupation du sol</summary>
+
+            <label><input type="checkbox">1985</label>
+
+            <label><input type="checkbox">2000</label>
+
+            <label><input type="checkbox">2015</label>
+
+            <label><input type="checkbox">2025</label>
+
+        </details>
+
+        <details>
+
+            <summary>Indices</summary>
+
+            <label><input type="checkbox">NDVI</label>
+
+            <label><input type="checkbox">EVI</label>
+
+            <label><input type="checkbox">MNDWI</label>
+
+            <label><input type="checkbox">BSI</label>
+
+            <label><input type="checkbox">LST</label>
+
+        </details>
+
+        <details>
+
+            <summary>Relief</summary>
+
+            <label><input type="checkbox">MNT 5 m</label>
+
+            <label><input type="checkbox">MNT 50 cm</label>
+
+        </details>
+
+        <hr>
+
+<h3>Informations</h3>
+
+<table>
+
+<tr>
+
+<td>Surface</td>
+
+<td id="surface">...</td>
+
+</tr>
+
+<tr>
+
+<td>Commune</td>
+
+<td id="commune">...</td>
+
+</tr>
+
+<tr>
+
+<td>Département</td>
+
+<td id="departement">...</td>
+
+</tr>
+
+<tr>
+
+<td>Classement</td>
+
+<td id="annee">...</td>
+
+</tr>
+
+</table>
+
+    </aside>
+
+    <!-- MAP -->
+
+    <main class="map-area">
+
+        <div id="map"></div>
+
+    </main>
+
+</div>
+
+<!-- ========================================================= -->
+
+<footer class="statusbar">
+
+    <div id="coords">
+
+        Latitude : --
+
+        Longitude : --
+
+    </div>
+
+    <div>
+
+        EPSG:4326
+
+    </div>
+
+    <div>
+
+        GeoMbao Monitor v1.0
+
+    </div>
+
+</footer>
+
+<!-- ========================================================= -->
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script src="{{ url_for('static', path='js/map.js') }}"></script>
+
+<script src="{{ url_for('static', path='js/layers.js') }}"></script>
+
+<script src="{{ url_for('static', path='js/controls.js') }}"></script>
+
+<script src="{{ url_for('static', path='js/dashbord.js') }}"></script>
+
+</body>
+
+</html>

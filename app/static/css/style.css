@@ -1,0 +1,283 @@
+/* ============================
+   RESET
+============================ */
+
+body{
+    background:red !important;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,Arial,sans-serif;
+}
+
+html,body{
+    height:100%;
+    overflow:hidden;
+    background:#f4f6f8;
+}
+
+
+/* ============================
+   HEADER
+============================ */
+
+.topbar{
+
+    height:65px;
+
+    background:#0f6b2f;
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.25);
+
+    z-index:1000;
+
+}
+
+.logo{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.title{
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.user{
+
+    font-size:15px;
+
+}
+
+
+/* ============================
+   MENU
+============================ */
+
+.menu{
+
+    height:50px;
+
+    background:white;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding-left:30px;
+
+    border-bottom:1px solid #dcdcdc;
+
+}
+
+.menu a{
+
+    color:#444;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+}
+
+.menu a:hover{
+
+    color:#0f6b2f;
+
+}
+
+.menu .active{
+
+    color:#0f6b2f;
+
+    border-bottom:3px solid #0f6b2f;
+
+    padding-bottom:12px;
+
+}
+
+
+/* ============================
+   MAIN
+============================ */
+
+.container{
+
+    display:flex;
+
+    height:calc(100vh - 115px);
+
+}
+
+
+/* ============================
+   SIDEBAR
+============================ */
+
+.sidebar{
+
+    width:320px;
+
+    background:white;
+
+    border-right:1px solid #ddd;
+
+    overflow:auto;
+
+    padding:20px;
+
+}
+
+.sidebar h2{
+
+    margin-bottom:20px;
+
+    color:#0f6b2f;
+
+}
+
+details{
+
+    margin-bottom:18px;
+
+}
+
+summary{
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+
+}
+
+.sidebar label{
+
+    display:block;
+
+    margin:8px 0;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+}
+
+.sidebar input{
+
+    margin-right:8px;
+
+}
+
+
+/* ============================
+   MAP
+============================ */
+
+.map-area{
+
+    flex:1;
+
+    position:relative;
+
+}
+
+#map{
+
+    width:100%;
+
+    height:100%;
+
+}
+
+
+/* ============================
+   STATUSBAR
+============================ */
+
+.statusbar{
+
+    height:35px;
+
+    background:white;
+
+    border-top:1px solid #ddd;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    font-size:14px;
+
+}
+
+
+/* ============================
+   LEAFLET
+============================ */
+
+.leaflet-control-zoom{
+
+    margin-top:20px!important;
+
+    margin-left:20px!important;
+
+}
+
+.leaflet-popup-content{
+
+    font-size:14px;
+
+}
+
+
+/* ============================
+   SCROLL
+============================ */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c6c6c6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#999;
+}
