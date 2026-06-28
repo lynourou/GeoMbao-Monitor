@@ -1,25 +1,21 @@
-from collections.abc import Generator
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import Session
 
-from app.config import DATABASE_URL
+from app.core.settings import settings
 
-engine = create_engine(
-    DATABASE_URL,
-    pool_pre_ping=True,
-    pool_recycle=1800,
-    connect_args={"connect_timeout": 5},
+DATABASE_URL = (
+    f"postgresql+psycopg2://"
+    f"{settings.DB_USER}:"
+    f"{settings.DB_PASSWORD}@"
+    f"{settings.DB_HOST}:"
+    f"{settings.DB_PORT}/"
+    f"{settings.DB_NAME}"
 )
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+engine = create_engine(DATABASE_URL)
 
-
-def get_db() -> Generator[Session, None, None]:
-    """Provide one database session per request."""
-    database = SessionLocal()
-    try:
-        yield database
-    finally:
-        database.close()
+SessionLocal = sessionmaker(
+    autocommit=False,
+    autoflush=False,
+    bind=engine,
+)
